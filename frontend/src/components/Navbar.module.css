@@ -1,0 +1,46 @@
+.navtotal{
+    background: linear-gradient(to bottom, blueviolet 0% , white 100%);
+    display: flex;
+    justify-content: center;
+    padding:1rem;
+    border:rgb(62, 1, 120);
+    width:auto;
+}
+
+.searchbar{
+    width: 20vw;
+    height:5vh;
+    border-radius: 10px;
+    border:none;
+    outline: none;
+}
+
+.searchbar+button{
+    width:auto;
+    height:5vh;
+    border-radius: 10px;
+    margin-left: 1rem;
+    background-color: black;
+    color:white;
+}
+
+.searchData{
+    height:auto;
+}
+
+table{
+    border-collapse: collapse;
+}
+
+table  td{
+    border:1px outset black;
+    padding: 1rem;
+}
+
+table th{
+    border:1px outset black;
+    padding: 1rem;
+    color: white;
+    text-transform: uppercase;
+    background-color: black;
+}
