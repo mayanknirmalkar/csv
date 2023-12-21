@@ -31,19 +31,15 @@ Make sure you have the following prerequisites installed:
 1. Clone the repository to your local machine.
    ```bash
    git clone https://github.com/your-username/csv-to-table-app.git
+   cd client 
+   npm install
+   npm start
+
+   cd server
+   npm install
+   npm start
+
   <br>
-  cd client 
-<br>
-npm install
-<br>
-npm start
-<br>
-<br>
-cd server
-<br>
-npm install
-<br>
-npm start
 
 ### Usage
 Once the app is running, follow these steps:
