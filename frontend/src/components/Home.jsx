@@ -5,7 +5,7 @@ import styles from "./Home.module.css";
 
 
 const Home = () => {
-        const baseUrl = `https://csv-backend-sk29.onrender.com/`;
+       
         const formdata = new FormData();
         const [file, setFile] = useState(null);
         const [title, setTitle] = useState("");
@@ -18,7 +18,7 @@ const Home = () => {
 
         const deleteDoc = async (_id) =>{
 
-            await axios.get(`${baseUrl}/delete/${_id}`, {
+            await axios.get(`https://csv-backend-sk29.onrender.com/delete/${_id}`, {
               headers:{
                 "Content-Type": "application/json"
               }
@@ -50,10 +50,8 @@ const Home = () => {
               formdata.append('csv', file)
 
               formdata.append('title', title)
-              
-              console.log(`${baseUrl}/upload`)
 
-               await axios.post(`${baseUrl}/upload`, formdata, {
+               await axios.post(`https://csv-backend-sk29.onrender.com/upload`, formdata, {
                 headers:{
                   "Content-Type": "multipart/form-data"
                 }
@@ -77,7 +75,7 @@ const Home = () => {
 
             const getUploads = async () =>{
               try {
-                const uploads = await axios.get(`${baseUrl}/getuploads`, {
+                const uploads = await axios.get(`https://csv-backend-sk29.onrender.com/getuploads`, {
                   headers:{
                     "Content-Type": "application/json"
                   }
@@ -101,7 +99,7 @@ const Home = () => {
 
             try {
 
-                  const parsed = await axios.get(`${baseUrl}/read/${_id}`,  {
+                  const parsed = await axios.get(`https://csv-backend-sk29.onrender.com/read/${_id}`,  {
                   headers:{
                     "Content-Type": "application/json"
                   }
