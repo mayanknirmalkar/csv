@@ -5,7 +5,7 @@ import styles from "./Home.module.css";
 
 
 const Home = () => {
-        const baseUrl = process.env.REACT_APP_BASE_URL;
+        const baseUrl = `https://csv-backend-sk29.onrender.com/`;
         const formdata = new FormData();
         const [file, setFile] = useState(null);
         const [title, setTitle] = useState("");
