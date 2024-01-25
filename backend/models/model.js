@@ -5,6 +5,7 @@ const fileSchema = new mongoose.Schema({
     filename:{
         type:String,
         unique:true,
+        required:true
     },
 
     filepath:{
@@ -14,6 +15,11 @@ const fileSchema = new mongoose.Schema({
     filetype:{
         type:String,
         default:'text/csv'
+    },
+
+    fileData: {
+        type: String,
+        required:true
     }
 },{timestamps:true})
 

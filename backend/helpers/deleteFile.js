@@ -9,7 +9,7 @@ const deleteFile = async (req,res) =>{
 
       const doc = await File.findById(_id);
 
-      fs.unlinkSync(doc.filepath)
+      
 
      await File.deleteOne({_id})
 

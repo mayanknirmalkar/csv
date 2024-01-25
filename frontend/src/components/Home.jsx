@@ -7,7 +7,8 @@ import styles from "./Home.module.css";
 const Home = () => {
         const baseUrl = process.env.REACT_APP_BASE_URL;
         const formdata = new FormData();
-        const [file, setFile] = useState(null)
+        const [file, setFile] = useState(null);
+        const [title, setTitle] = useState("");
         const [list, setList] = useState([]);
         const [parsedData, setParsedData] = useState([]);
         const [columns, setColumns] = useState([])
@@ -27,7 +28,7 @@ const Home = () => {
         }
  
         const validation = (e) =>{
-            e.preventDefault()
+            e.preventDefault();
             const csv = e.target.files[0];
 
             if(csv){
@@ -44,11 +45,13 @@ const Home = () => {
         
           const uploadHandler = async(e) =>{
               
-              
               try {
                 
               formdata.append('csv', file)
 
+              formdata.append('title', title)
+              
+              console.log(`${baseUrl}/upload`)
 
                await axios.post(`${baseUrl}/upload`, formdata, {
                 headers:{
@@ -59,7 +62,9 @@ const Home = () => {
               
               document.getElementById("file-input").value = "";
               setFile(null);
+              setTitle("")
               formdata.delete('csv')
+              formdata.delete('title')
 
               } catch (error) {
                 console.log(error.message)
@@ -152,6 +157,9 @@ const Home = () => {
                       {
                           file && <button className={styles.uploadBtn} type="submit">Upload</button>
                       }
+
+                      <input id={styles.fileInput} name="title" type="text" onChange={(e)=> setTitle(e.target.value)}  value={title} className="input-box" placeholder="Enter File Name" required/>
+
                 </form>
 
             </div>

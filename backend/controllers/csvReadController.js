@@ -6,22 +6,27 @@ import util from "util"
 
 const readController = async (req,res) =>{
 
-    const readFileAsync = util.promisify(fs.readFile)
+    
 
     const _id = req.params.id;
 
     try {
         const file = await File.findById(_id);
 
-        const filepath = file.filepath;
+        
 
-        const data = await readFileAsync(filepath, "utf-8"); 
-            
+        const data = file.fileData;
+
+        
+        
+       
 
         const records = parse(data, {
             columns: true,
             skip_empty_lines: true
-        })       
+        })
+
+        
 
        return res.status(200).json({
             success:true,
