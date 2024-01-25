@@ -54,6 +54,7 @@ body{
     border:none;
     border-radius: 7px;
     cursor: pointer;
+    margin: 1rem;
 }
 
 .listItem{
